@@ -1,6 +1,5 @@
 package erasmushub.repo;
 
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -46,7 +45,7 @@ public interface StudenteRepo extends JpaRepository<Studente, Integer>{
 	  @Modifying
 	  @Query("UPDATE Studente s SET email = :email, password = :password, nome = :nome, cognome = :cognome, "
 	           + "matricola = :matricola, paese = :paese, facolta = :facolta, foto = :foto WHERE s.id = :id")
-	  int updateAssociazione(
+	  int updateStudente(
 			  @Param("email") String email, 
 			  @Param("password") String password, 
 	          @Param("nome") String nome, 
