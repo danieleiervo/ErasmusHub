@@ -21,16 +21,18 @@ public class Studente implements Serializable {
 	private String cognome;
 	private String matricola;
 	private String paese;
+	private String facolta;
 	
 	public Studente() {}
 	
-	public Studente(String email, String password, String nome, String cognome, String matricola, String paese) {
+	public Studente(String email, String password, String nome, String cognome, String matricola, String paese, String facolta) {
 		this.email = email;
 		this.password = password;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.matricola = matricola;
 		this.paese = paese;
+		this.facolta = facolta;
 	}
 
 	public String getEmail() {
@@ -79,6 +81,14 @@ public class Studente implements Serializable {
 
 	public void setPaese(String paese) {
 		this.paese = paese;
+	}
+	
+	public String getFacolta() {
+		return facolta;
+	}
+	
+	public void setFacolta(String facolta) {
+		this.facolta = facolta;
 	}
 
 	public static long getSerialversionuid() {
