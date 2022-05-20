@@ -50,9 +50,8 @@ public interface AssociazioneRepo extends JpaRepository<Associazione, Integer>{
 			  @Param("password") String password, 
 	          @Param("nome") String nome, 
 	          @Param("dipartimento") String dipartimento, 
-	          @Param("risposte") String vat,
-	          @Param("punteggio") String descrizione, 
-	          @Param("logo") String logo,
+	          @Param("risposte") int risposte,
+	          @Param("punteggio") int punteggio, 
 	          @Param("foto") String foto,
 	          @Param("id") int id);
 }
