@@ -21,18 +21,20 @@ public class Associazione implements Serializable {
 	private String dipartimento;
 	private int risposte;
 	private int punteggio;
+	private String foto;
 	
 	
 	public Associazione() {}
 
 
-	public Associazione(String email, String password, String nome, String dipartimento, int risposte, int punteggio) {
+	public Associazione(String email, String password, String nome, String dipartimento, int risposte, int punteggio, String foto) {
 		this.email = email;
 		this.password = password;
 		this.nome = nome;
 		this.dipartimento = dipartimento;
 		this.risposte = risposte;
 		this.punteggio = punteggio;
+		this.foto = foto;
 	}
 
 
@@ -95,6 +97,13 @@ public class Associazione implements Serializable {
 		this.punteggio = punteggio;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+	
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
