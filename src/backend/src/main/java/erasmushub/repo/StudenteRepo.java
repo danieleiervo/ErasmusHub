@@ -19,7 +19,7 @@ public interface StudenteRepo extends JpaRepository<Studente, Integer>{
 	
 	//SQL: Cerca uno studente tramite l'id di un ticket
 	@Query(
-			value ="SELECT studente.email, studente.password, studente.nome, studente.cognome, studente.matricola, studente.paese, studente.facolta, studente.foto " +
+			value ="SELECT studente.email, studente.password, studente.nome, studente.cognome, studente.matricola, studente.paese, studente.facolta, studente.foto, studente.bus_tickets " +
 			"FROM studente " +
 			"INNER JOIN ticket " +
 			"ON ticket.id_studente = studente.id " +
@@ -44,7 +44,7 @@ public interface StudenteRepo extends JpaRepository<Studente, Integer>{
 	  //JPQL: Aggiorna uno studente tramite il suo id
 	  @Modifying
 	  @Query("UPDATE Studente s SET email = :email, password = :password, nome = :nome, cognome = :cognome, "
-	           + "matricola = :matricola, paese = :paese, facolta = :facolta, foto = :foto WHERE s.id = :id")
+	           + "matricola = :matricola, paese = :paese, facolta = :facolta, foto = :foto, bus_tickets = :bus_tickets WHERE s.id = :id")
 	  int updateStudente(
 			  @Param("email") String email, 
 			  @Param("password") String password, 
@@ -54,5 +54,6 @@ public interface StudenteRepo extends JpaRepository<Studente, Integer>{
 	          @Param("paese") String paese, 
 	          @Param("facolta") String facolta,
 	          @Param("foto") String foto,
+	          @Param("bus_tickets") int bus_tickets,
 	          @Param("id") int id);
 }
