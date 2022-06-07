@@ -14,22 +14,22 @@ public class Post2Studente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private int id_studente;
+	private String mat_studente;
 	private int id_post;
 	
 	public Post2Studente() {}
 
-	public Post2Studente(int id_studente, int id_post) {
-		this.id_studente = id_studente;
+	public Post2Studente(String mat_studente, int id_post) {
+		this.mat_studente = mat_studente;
 		this.id_post = id_post;
 	}
 
-	public int getId_studente() {
-		return id_studente;
+	public String getmat_studente() {
+		return mat_studente;
 	}
 
-	public void setId_studente(int id_studente) {
-		this.id_studente = id_studente;
+	public void setmat_studente(String mat_studente) {
+		this.mat_studente = mat_studente;
 	}
 
 	public int getId_post() {
