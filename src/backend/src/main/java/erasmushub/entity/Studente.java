@@ -12,14 +12,12 @@ public class Studente implements Serializable {
 	
 	//Attributi
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private String matricola;
 	
 	private String email;
 	private String password;
 	private String nome;
 	private String cognome;
-	private String matricola;
 	private String paese;
 	private String facolta;
 	private String foto;
@@ -115,8 +113,6 @@ public class Studente implements Serializable {
 		return serialVersionUID;
 	}
 
-	public int getId() {
-		return id;
-	}
+	
 	
 }
