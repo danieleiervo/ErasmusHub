@@ -24,19 +24,19 @@ public class StudenteService {
 		return repo.findAll();
 	}
 	
-	//Return studente per id
-	public Studente findById(int id) {
-		return repo.findById(id);
+	//Return studente per matricola
+	public Studente findByMatricola(String matricola) {
+		return repo.findByMatricola(matricola);
 	}
 	
-	//Cancella uno studente e return l'id se cancellata
-	public int deleteById(int id) {
-		return repo.deleteById(id);
+	//Cancella uno studente e return matricola
+	public String deleteByMatricola(String matricola) {
+		return repo.deleteByMatricola(matricola);
 	}
 	
-	//Insert di uno studente e return dell'id se inserita
-	public int insert(Studente s) {
-		return repo.saveAndFlush(s).getId();
+	//Insert di uno studente e return della matricola
+	public String insert(Studente s) {
+		return repo.saveAndFlush(s).getMatricola();
 	}
 	
 	//Update di uno studente e return dell'id se aggiornata
@@ -46,11 +46,11 @@ public class StudenteService {
 				s.getPassword(), 
 				s.getNome(), 
 				s.getCognome(), 
-				s.getMatricola(), 
 				s.getPaese(), 
 				s.getFacolta(),
 				s.getFoto(),
-				s.getId());
+				s.getBusTickets(),
+				s.getMatricola());
 	}
 	
 }
