@@ -14,7 +14,7 @@ public interface AssociazioneRepo extends JpaRepository<Associazione, Integer>{
 	
 	//JPQL: Elimina un'associazione tramite id
 	@Modifying
-	@Query("DELET FROM Associazione a WHERE a.id = ?1")
+	@Query("DELETE FROM Associazione a WHERE a.id = ?1")
 	int deleteById(int id);
 	
 	//SQL: Cerca un'associazione tramite l'id di un post
