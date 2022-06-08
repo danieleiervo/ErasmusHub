@@ -17,7 +17,7 @@ public class Ticket implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private int id_studente;
+	private String mat_studente;
 	private int id_associazione_best;
 	private String titolo;
 	private String testo;
@@ -25,20 +25,20 @@ public class Ticket implements Serializable {
 	
 	public Ticket() {}
 
-	public Ticket(int id_studente, int id_associazione_best, String titolo, String testo, Date data_apertura) {
-		this.id_studente = id_studente;
+	public Ticket(String mat_studente, int id_associazione_best, String titolo, String testo, Date data_apertura) {
+		this.mat_studente = mat_studente;
 		this.id_associazione_best = id_associazione_best;
 		this.titolo = titolo;
 		this.testo = testo;
 		this.data_apertura = data_apertura;
 	}
 
-	public int getId_studente() {
-		return id_studente;
+	public String getMat_studente() {
+		return mat_studente;
 	}
 
-	public void setId_studente(int id_studente) {
-		this.id_studente = id_studente;
+	public void setMat_studente(String mat_studente) {
+		this.mat_studente = mat_studente;
 	}
 
 	public int getId_associazione_best() {
