@@ -1,6 +1,7 @@
 package erasmushub.repo;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -26,4 +27,10 @@ public interface PostRepo extends JpaRepository<Post, Integer> {
 	int updatePost(@Param("id_associazione") int id_associazione, @Param("img") String img, @Param("nome") String nome,
 			@Param("descrizione") String descrizione, @Param("data_pubblicazione") Date data_pubblicazione,
 			@Param("data_evento") Date data_evento, @Param("id") int id);
+
+	// SQL: Cerca tutti i post di un'associazione
+	@Query(value = "SELECT post.id, post.id_associazione, post.img, post.nome, post.descrizione, post.data_pubblicazione, post.data_evento "
+			+ "FROM post INNER JOIN associazione ON associazione.id = post.associazione_id "
+			+ "WHERE associazione.id = :id_associazione", nativeQuery = true)
+	List<Post> findAllPostByAssociazione(@Param("id_associazione") int id_associazione);
 }

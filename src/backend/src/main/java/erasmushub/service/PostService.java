@@ -44,5 +44,10 @@ public class PostService {
 		return repo.updatePost(p.getId_associazione(), p.getImg(), p.getNome(), p.getDescrizione(),
 				p.getData_pubblicazione(), p.getData_evento(), p.getId());
 	}
+	
+	// Return tutti i post di un'associazione
+	public List<Post> findAllPostByAssociazione(int id_associazione) {
+		return repo.findAllPostByAssociazione(id_associazione);
+	}
 
 }

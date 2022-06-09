@@ -20,6 +20,6 @@ public interface Post2StudenteRepo extends JpaRepository<Post2Studente, Integer>
 	// JPQL: Aggiorna tramite id
 	@Modifying
 	@Query("UPDATE Post2Studente p SET mat_studente = :mat_studente, id_post = :id_post WHERE p.id = :id")
-	int updatePost2Studente(@Param("mat_studente") String mat_studente, @Param("id_post") int id_psot, @Param("id") int id);
+	int updatePost2Studente(@Param("mat_studente") String mat_studente, @Param("id_post") int id_post, @Param("id") int id);
 
 }
