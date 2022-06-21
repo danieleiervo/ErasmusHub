@@ -27,7 +27,7 @@ public interface TicketRepo extends JpaRepository<Ticket, Integer> {
 	int updateTicket(@Param("mat_studente") String mat_studente, @Param("id_associazione_best") int id_associazione_best,
 			@Param("titolo") String titolo, @Param("testo") String testo, @Param("data_apertura") Date data_apertura,
 			@Param("id") int id);
-	
+
 	// SQL: Cerca tutti i ticket di uno studente
 	@Query(value = "SELECT ticket.id, ticket.mat_studente, ticket.id_associazione_best, ticket.titolo, ticket.testo, ticket.data_apertura "
 			+ "FROM ticket INNER JOIN studente ON studente.matricola = ticket.mat_studente "

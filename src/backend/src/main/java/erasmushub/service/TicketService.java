@@ -1,7 +1,9 @@
 package erasmushub.service;
 
 import java.util.List;
+
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +45,7 @@ public class TicketService {
 	public int updateTicket(Ticket t) {
 		return repo.updateTicket(t.getMat_studente(), t.getId_associazione_best(), t.getTitolo(), t.getTesto(), t.getDataApertura(), t.getId());
 	}
-	
+
 	// Return tutti i ticket di uno studente
 	public List<Ticket> findAllTicketByStudente(String mat_studente) {
 		return repo.findAllTicketByStudente(mat_studente);

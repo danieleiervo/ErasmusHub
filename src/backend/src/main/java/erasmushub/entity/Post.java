@@ -4,26 +4,30 @@ package erasmushub.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "post")
 public class Post implements Serializable {
 	//ID serializzazione
 	private static final long serialVersionUID = 5L;
-	
+
 	//Attributi
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private int id_associazione;
 	private String img;
 	private String nome;
 	private String descrizione;
 	private Date data_pubblicazione;
 	private Date data_evento;
-	
+
 	public Post() {}
 
 	public Post(int id_associazione, String img, String nome, String descrizione, Date data_pubblicazione,
@@ -91,5 +95,5 @@ public class Post implements Serializable {
 	public int getId() {
 		return id;
 	}
-	
+
 }

@@ -2,19 +2,24 @@ package erasmushub.entity;
 
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "associazione")
 public class Associazione implements Serializable {
 	//ID serializzazione
 	private static final long serialVersionUID = 2L;
-	
+
 	//Attributi
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String email;
 	private String password;
 	private String nome;
@@ -22,8 +27,8 @@ public class Associazione implements Serializable {
 	private int risposte;
 	private int punteggio;
 	private String foto;
-	
-	
+
+
 	public Associazione() {}
 
 
@@ -100,7 +105,7 @@ public class Associazione implements Serializable {
 	public String getFoto() {
 		return foto;
 	}
-	
+
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
@@ -113,5 +118,5 @@ public class Associazione implements Serializable {
 	public int getId() {
 		return id;
 	}
-	
+
 }

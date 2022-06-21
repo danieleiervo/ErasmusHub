@@ -4,25 +4,29 @@ package erasmushub.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "ticket")
 public class Ticket implements Serializable {
 	//ID serializzazione
 	private static final long serialVersionUID = 3L;
-	
+
 	//Attributi
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String mat_studente;
 	private int id_associazione_best;
 	private String titolo;
 	private String testo;
 	private Date data_apertura;
-	
+
 	public Ticket() {}
 
 	public Ticket(String mat_studente, int id_associazione_best, String titolo, String testo, Date data_apertura) {
@@ -64,11 +68,11 @@ public class Ticket implements Serializable {
 	public void setTesto(String testo) {
 		this.testo = testo;
 	}
-	
+
 	public Date getDataApertura() {
 		return data_apertura;
 	}
-	
+
 	public void setDataApertura(Date data_apertura) {
 		this.data_apertura = data_apertura;
 	}

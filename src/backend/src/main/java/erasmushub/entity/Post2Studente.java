@@ -1,22 +1,27 @@
 package erasmushub.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "poststudente")
 public class Post2Studente implements Serializable {
 	//ID serializzazione
 	private static final long serialVersionUID = 5L;
-	
+
 	//Attributi
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String mat_studente;
 	private int id_post;
-	
+
 	public Post2Studente() {}
 
 	public Post2Studente(String mat_studente, int id_post) {
