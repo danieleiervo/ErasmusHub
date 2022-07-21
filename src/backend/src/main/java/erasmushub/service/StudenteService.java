@@ -20,7 +20,12 @@ public class StudenteService {
 	public StudenteService(StudenteRepo repo) {
 		this.repo = repo;
 	}
-
+	
+	//Login
+	public Studente login(String email, String password) {
+		return repo.login(email, password);
+	}
+	
 	//Return di tutte gli studenti
 	public List<Studente> findAll() {
 		return repo.findAll();

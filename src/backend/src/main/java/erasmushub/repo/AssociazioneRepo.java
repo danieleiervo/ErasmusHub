@@ -8,6 +8,12 @@ import org.springframework.data.repository.query.Param;
 import erasmushub.entity.Associazione;
 
 public interface AssociazioneRepo extends JpaRepository<Associazione, Integer>{
+	//JPQL: Cerca associazione tramite email e password
+	@Query("SELECT a FROM Associazione a WHERE a.email = :email AND a.password = :password")
+	Associazione login(
+			@Param("email") String email,
+			@Param("password") String password);
+	
 	//JPQL: Cerca un'associazione tramite id
 	@Query("SELECT a FROM Associazione a WHERE a.id = ?1")
 	Associazione findById(int id);

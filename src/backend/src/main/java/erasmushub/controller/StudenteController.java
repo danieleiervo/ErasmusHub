@@ -1,5 +1,6 @@
 package erasmushub.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,19 @@ public class StudenteController {
 	public StudenteController(StudenteService studenteService) {
 		this.studenteService = studenteService;
 	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Studente> login(@RequestBody ArrayList<String> loginData) {
+		try {
+			Studente studenteLogin = studenteService.login(loginData.get(0), loginData.get(1));
+			return new ResponseEntity<>(studenteLogin, HttpStatus.OK);
+			
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+
 
 	@GetMapping("/findAll")
 	public ResponseEntity<List<Studente>> findAll() {

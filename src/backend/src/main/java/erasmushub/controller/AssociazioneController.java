@@ -1,5 +1,6 @@
 package erasmushub.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,18 @@ public class AssociazioneController {
 	@Autowired
 	public AssociazioneController(AssociazioneService associazioneService) {
 		this.associazioneService = associazioneService;
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Associazione> login(@RequestBody ArrayList<String> loginData) {
+		try {
+			Associazione associazioneLogin = associazioneService.login(loginData.get(0), loginData.get(1));
+			return new ResponseEntity<>(associazioneLogin, HttpStatus.OK);
+			
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+		}
 	}
 
 	@GetMapping("/findAll")

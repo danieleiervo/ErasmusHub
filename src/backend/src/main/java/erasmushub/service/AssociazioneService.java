@@ -21,6 +21,11 @@ public class AssociazioneService {
 		this.repo = repo;
 	}
 
+	//Login
+	public Associazione login(String email, String password) {
+		return repo.login(email, password);
+	}
+	
 	//Return di tutte le associazioni
 	public List<Associazione> findAll() {
 		return repo.findAll();

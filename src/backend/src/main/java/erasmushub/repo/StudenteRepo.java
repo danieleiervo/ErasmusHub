@@ -8,6 +8,13 @@ import org.springframework.data.repository.query.Param;
 import erasmushub.entity.Studente;
 
 public interface StudenteRepo extends JpaRepository<Studente, Integer>{
+	//JPQL: Cerca associazione tramite email e password
+	@Query("SELECT s FROM Studente s WHERE s.email = :email AND s.password = :password")
+	Studente login(
+			@Param("email") String email,
+			@Param("password") String password);
+	
+	
 	//JPQL: Cerca uno studente tramite matricola
 	@Query("SELECT s FROM Studente s WHERE s.matricola = :matricola")
 	Studente findByMatricola(
