@@ -43,7 +43,7 @@ CREATE TABLE `associazione` (
 
 LOCK TABLES `associazione` WRITE;
 /*!40000 ALTER TABLE `associazione` DISABLE KEYS */;
-INSERT INTO `associazione` VALUES (1,'coscienze@gmail.com','password','CoScienze','Matematica e Fisica',0,0,NULL),(2,'iperuranio','password','Iperuranio','Farmacia',0,0,NULL);
+INSERT INTO `associazione` VALUES (1,'coscienze@gmail.com','password','CoScienze','Matematica e Fisica',0,0,NULL),(2,'iperuranio@gmail.com','password','Iperuranio','Farmacia',0,0,NULL);
 /*!40000 ALTER TABLE `associazione` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `post` (
   PRIMARY KEY (`id`),
   KEY `id_idx` (`id_associazione`),
   CONSTRAINT `id_associazione` FOREIGN KEY (`id_associazione`) REFERENCES `associazione` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,6 +74,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
+INSERT INTO `post` VALUES (1,1,NULL,'Scientific library new opening hours','From today, May 23, the Scientific and Technological library will close at 5pm!','2022-05-23','2022-05-23'),(2,1,NULL,'Humanistic library new opening hours','From today, May 23, the Scientific and Technological library will close at 5pm!','2022-05-23','2022-05-23'),(3,2,NULL,'Summer party','Join us at the summer party in Piazza del Sapere this night','2022-06-21','2022-06-21');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,6 +133,7 @@ CREATE TABLE `studente` (
 
 LOCK TABLES `studente` WRITE;
 /*!40000 ALTER TABLE `studente` DISABLE KEYS */;
+INSERT INTO `studente` VALUES ('1000000000','daniele@gmail.com','password','Daniel','Esimo','Portugal','Informatica','',0),('1000000001','berk@gmail.com','password','Berk','Asif','Turkey','Informatica','',3);
 /*!40000 ALTER TABLE `studente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-21 19:02:00
+-- Dump completed on 2022-08-25 15:33:35
