@@ -1,0 +1,12 @@
+#mobile-header {
+    height: 145px;
+    background: linear-gradient(180deg, #91D0FF 0%, #278BF5 100%);
+    border-radius: 0px 0px 0px 46px;
+    display: block;
+}
+
+#logo {
+    max-width: 260px;
+    margin-top: 36px;
+    margin-left: 36px;
+}

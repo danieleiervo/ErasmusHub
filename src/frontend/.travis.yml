@@ -1,0 +1,21 @@
+dist: trusty
+sudo: required
+
+language: node_js
+node_js:
+  - '14.17.3'
+  
+branches:
+ only:
+  - main
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - ng build --prod
